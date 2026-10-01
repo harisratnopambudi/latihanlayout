@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Latihan Layout Karya Tulis Ilmiah - Kelas 6</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#eef1f5;--card:#fff;--ink:#1c2430;--mute:#5b6675;--line:#d8dee7;--accent:#1f4fa3;--accentbg:#e8eefa}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--card:#1b222b;--ink:#e6ebf2;--mute:#9aa6b6;--line:#2c3643;--accent:#7aa5f0;--accentbg:#1f2a3d}}
+:root[data-theme="dark"]{--bg:#12161c;--card:#1b222b;--ink:#e6ebf2;--mute:#9aa6b6;--line:#2c3643;--accent:#7aa5f0;--accentbg:#1f2a3d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.5}
+.wrap{max-width:1000px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.5rem;margin:0 0 4px}
+.sub{color:var(--mute);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h2{display:flex;align-items:center;gap:8px;font-size:1rem;margin:0 0 8px;color:var(--accent)}
+.card svg{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card ul{margin:0;padding-left:18px;font-size:.92rem}
+.card li{margin:3px 0}
+.note{margin:16px 0;padding:12px 14px;background:var(--accentbg);border-left:4px solid var(--accent);border-radius:6px;font-size:.92rem}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:24px 0 12px}
+.bar h2{margin:0;font-size:1.1rem}
+button{font:inherit;font-size:.9rem;padding:7px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--card);color:var(--accent);cursor:pointer}
+button[aria-pressed="true"]{background:var(--accent);color:var(--card)}
+#pages{overflow-x:auto;padding-bottom:4px}
+.notes .sheet{margin-right:62mm}
+.sheet{width:210mm;height:297mm;background:#fff;color:#000;box-shadow:0 2px 14px rgba(0,0,0,.25);padding:3cm 3cm 3cm 4cm;position:relative;margin:0 auto 20px;
+font-family:"Times New Roman","Liberation Serif",Times,serif;font-size:12pt;line-height:1.5;
+-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.sheet .in{position:relative}
+.guide .sheet::after{content:"";position:absolute;left:4cm;right:3cm;top:3cm;bottom:3cm;border:1px dashed #d23;pointer-events:none}
+.sheet p{margin:0 0 6pt;text-align:justify;position:relative}
+.sheet p.ind{text-indent:1.25cm}
+.sheet .judul{text-align:center;font-weight:bold;font-size:14pt;line-height:1.3;margin-bottom:8pt}
+.sheet .pen{text-align:center;margin-bottom:12pt}
+.sheet h3{font-size:12pt;font-weight:bold;margin:8pt 0 4pt;text-align:left}
+.sheet h4{font-size:12pt;font-weight:bold;margin:4pt 0 2pt;text-align:left}
+.sheet ol,.sheet ul{margin:0 0 6pt;padding-left:1.25cm;text-align:justify}
+.sheet ul{list-style:disc}
+.sheet .cap{text-align:center;font-weight:bold;margin:6pt 0 4pt}
+.sheet table{border-collapse:collapse;width:100%;margin:0 auto 8pt;font-size:12pt;line-height:1.3}
+.sheet th,.sheet td{border:1px solid #000;padding:3pt 6pt}
+.sheet th{text-align:center;font-weight:bold}
+.sheet td.c{text-align:center}
+.sheet .pg{position:absolute;bottom:1.4cm;left:0;right:0;text-align:center}
+.sheet .dp p{padding-left:1.25cm;text-indent:-1.25cm;text-align:left;line-height:1.15}
+
+.a{position:relative}
+.tip{display:none}
+.notes .a{outline:1.5px dashed #d4a000;outline-offset:2px;background:rgba(255,214,0,.16)}
+.notes .tip{display:block;position:absolute;top:50%;transform:translateY(-50%);left:calc(100% + 3cm + 12px);width:5.4cm;
+font:400 9pt/1.35 "Segoe UI",system-ui,Arial,sans-serif;text-align:left;text-indent:0;color:#4a3800;background:#fff3b8;border-left:3px solid #d4a000;border-radius:3px;padding:4px 7px;z-index:2}
+.notes .tip::before{content:"";position:absolute;right:100%;top:50%;width:calc(3cm + 12px);border-top:1.5px dashed #d4a000}
+.notes .pg .tip{left:calc(100% + 12px)}
+.notes .pg .tip::before{display:none}
+.notes .sheet p.ind::before{content:"TAB";position:absolute;left:0;top:.3em;width:1.05cm;text-align:center;text-indent:0;font:700 7pt/1.3 "Segoe UI",Arial,sans-serif;background:#d4a000;color:#2e2200;border-radius:2px}
+.printmsg{display:none}
+@media print{.sheet,.bar,.grid,.note{display:none}.printmsg{display:block;font-size:1.2rem}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-page" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/></symbol>
+<symbol id="i-type" viewBox="0 0 24 24"><path d="M5 6V4h14v2M12 4v16M9 20h6"/></symbol>
+<symbol id="i-align" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 10h18M9 5v14M15 5v14"/></symbol>
+<symbol id="i-hash" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14M10 4L8 20M16 4l-2 16"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+</svg>
+
+<div class="wrap">
+<h1>Latihan Layout Karya Tulis Ilmiah</h1>
+<p class="sub">Kelas 6 &middot; Tirulah tampilan tiga halaman di bawah ini di Microsoft Word.</p>
+
+<div class="grid">
+<div class="card"><h2><svg><use href="#i-page"/></svg>1. Atur Halaman</h2><ul>
+<li>Tab <b>Layout</b> &rarr; <b>Size</b> &rarr; pilih <b>A4</b>.</li>
+<li><b>Margins</b> &rarr; <b>Custom Margins</b>.</li>
+<li>Top 3 cm, Left 4 cm, Bottom 3 cm, Right 3 cm.</li></ul></div>
+
+<div class="card"><h2><svg><use href="#i-type"/></svg>2. Jenis dan Ukuran Huruf</h2><ul>
+<li>Semua teks: <b>Times New Roman</b>, ukuran <b>12</b>.</li>
+<li>Judul: ukuran <b>14</b>, <b>tebal (Bold)</b>, huruf kapital, rata tengah.</li>
+<li>Subjudul (Pendahuluan, Metode, dst.): tebal, rata kiri.</li></ul></div>
+
+<div class="card"><h2><svg><use href="#i-align"/></svg>3. Paragraf</h2><ul>
+<li>Klik kanan &rarr; <b>Paragraph</b>.</li>
+<li>Alignment: <b>Justified</b> (rata kiri-kanan).</li>
+<li>Line spacing: <b>1,5 lines</b>.</li>
+<li>Awal paragraf: tekan tombol <b>Tab</b> 1 kali.</li><li>Poin-poin: tab <b>Home</b> &rarr; <b>Bullets</b> atau <b>Numbering</b>.</li></ul></div>
+
+<div class="card"><h2><svg><use href="#i-table"/></svg>4. Membuat Tabel</h2><ul>
+<li><b>Insert</b> &rarr; <b>Table</b> &rarr; 3 kolom, 7 baris.</li>
+<li>Tab <b>Table Design</b> &rarr; <b>Borders</b> &rarr; <b>All Borders</b>.</li>
+<li>Baris judul tabel: tebal dan rata tengah.</li>
+<li>Tulis "Tabel 1." di atas tabel, rata tengah.</li></ul></div>
+
+<div class="card"><h2><svg><use href="#i-hash"/></svg>5. Nomor Halaman</h2><ul>
+<li><b>Insert</b> &rarr; <b>Page Number</b> &rarr; <b>Bottom of Page</b>.</li>
+<li>Pilih <b>Plain Number 2</b> (di tengah bawah).</li>
+<li>Pindah ke halaman berikutnya dengan <b>Ctrl + Enter</b>.</li></ul></div>
+
+<div class="card"><h2><svg><use href="#i-check"/></svg>6. Periksa Hasilmu</h2><ul>
+<li>Hanya 3 halaman.</li>
+<li>Judul rata tengah, isi rata kiri-kanan.</li>
+<li>Tabel punya garis dan judul tabel.</li>
+<li>Nomor halaman ada di tengah bawah.</li>
+<li>Daftar pustaka: baris kedua menjorok ke dalam.</li></ul></div>
+</div>
+
+<div class="note">Teks pada kertas di bawah tidak dapat disalin. Ketik ulang teksnya sambil memperhatikan tata letaknya. Kotak kuning di sebelah kanan kertas adalah petunjuk jenis huruf, ukuran, dan cara pengaturannya. Tanda TAB menunjukkan awal paragraf yang ditekan Tab.</div>
+
+<div class="bar"><h2>Contoh yang harus ditiru</h2>
+<div><button id="n" aria-pressed="true" type="button">Petunjuk</button> <button id="g" aria-pressed="false" type="button">Garis margin</button></div></div>
+
+<div class="printmsg">Halaman ini tidak dapat dicetak.</div>
+
+<div id="pages" class="notes">
+<!-- Halaman 1 -->
+<div class="sheet"><div class="in">
+<div class="judul a">PENGARUH KEBIASAAN MEMBUANG SAMPAH<br>TERHADAP KEBERSIHAN KELAS<span class="tip">Times New Roman, ukuran 14, Bold, huruf kapital, rata tengah (Ctrl + E)</span></div>
+<div class="pen a">Disusun oleh: Nama Siswa<br>Kelas 6<span class="tip">Times New Roman, ukuran 12, rata tengah (Ctrl + E)</span></div>
+
+<h3 class="a">A. PENDAHULUAN<span class="tip">Subjudul: Times New Roman, ukuran 12, Bold, rata kiri (Ctrl + L)</span></h3>
+<h4>1. Latar Belakang</h4>
+<p class="ind a">Kebersihan kelas merupakan salah satu faktor yang mendukung kenyamanan belajar. Kelas yang bersih membuat siswa lebih fokus dan terhindar dari penyakit. Namun, masih sering ditemukan sampah di bawah meja dan di sudut ruangan. Hal ini menunjukkan bahwa kebiasaan membuang sampah pada tempatnya belum dilakukan oleh semua siswa. Oleh karena itu, penulis tertarik untuk meneliti kebiasaan membuang sampah di kelas 6.<span class="tip">Awal paragraf: tekan Tab 1 kali. Times New Roman 12, rata kiri-kanan (Ctrl + J), spasi 1,5</span></p>
+<h4>2. Rumusan Masalah</h4>
+<div class="a"><ol>
+<li>Bagaimana kebiasaan siswa kelas 6 dalam membuang sampah?</li>
+<li>Apa pengaruh kebiasaan tersebut terhadap kebersihan kelas?</li>
+</ol><span class="tip">Poin berurutan: tab Home, klik Numbering (1, 2, 3)</span></div>
+<h4>3. Tujuan</h4>
+<div class="a"><ul>
+<li>Mengetahui kebiasaan siswa kelas 6 dalam membuang sampah.</li>
+<li>Mengetahui pengaruh kebiasaan tersebut terhadap kebersihan kelas.</li>
+</ul><span class="tip">Poin biasa: tab Home, klik Bullets</span></div>
+
+<h3>B. METODE</h3>
+<p class="ind">Penelitian dilakukan dengan cara observasi atau pengamatan selama lima hari sekolah. Setiap pulang sekolah, penulis menghitung jumlah sampah yang masih berada di lantai kelas. Pada hari Rabu, ketua kelas mulai mengingatkan teman-temannya untuk membuang sampah ke tempat sampah. Data yang diperoleh kemudian disusun dalam bentuk tabel dan dihitung rata-ratanya.</p>
+</div><div class="pg">1</div></div>
+
+<!-- Halaman 2 -->
+<div class="sheet"><div class="in">
+<h3>C. HASIL DAN PEMBAHASAN</h3>
+<p class="ind">Hasil pengamatan jumlah sampah di lantai kelas 6 selama lima hari ditunjukkan pada Tabel 1 berikut.</p>
+<div class="cap a">Tabel 1. Jumlah Sampah di Lantai Kelas 6<span class="tip">Judul tabel: Bold, rata tengah, diletakkan di atas tabel</span></div>
+<div class="a"><table>
+<tr><th style="width:22%">Hari</th><th style="width:38%">Jumlah Sampah (buah)</th><th>Keterangan</th></tr>
+<tr><td>Senin</td><td class="c">12</td><td>Banyak</td></tr>
+<tr><td>Selasa</td><td class="c">9</td><td>Cukup banyak</td></tr>
+<tr><td>Rabu</td><td class="c">5</td><td>Sedikit</td></tr>
+<tr><td>Kamis</td><td class="c">4</td><td>Sedikit</td></tr>
+<tr><td>Jumat</td><td class="c">2</td><td>Sangat sedikit</td></tr>
+<tr><td><b>Rata-rata</b></td><td class="c"><b>6,4</b></td><td>-</td></tr>
+</table><span class="tip">Insert, Table: 3 kolom, 7 baris, lalu All Borders. Baris judul: Bold dan rata tengah</span></div>
+<h4>Pembahasan</h4>
+<p class="ind">Berdasarkan Tabel 1, jumlah sampah paling banyak ditemukan pada hari Senin, yaitu 12 buah. Setelah siswa diingatkan untuk membuang sampah pada hari Rabu, jumlah sampah terus menurun hingga hanya 2 buah pada hari Jumat. Rata-rata sampah yang ditemukan setiap hari adalah 6,4 buah.</p>
+
+<p class="ind">Penurunan jumlah sampah menunjukkan bahwa kebiasaan baik dapat dibentuk dengan saling mengingatkan. Siswa yang awalnya lupa membuang sampah menjadi lebih sadar setelah diingatkan oleh ketua kelas. Selain itu, tempat sampah yang tersedia di dekat pintu dan di sudut kelas memudahkan siswa membuang sampah tanpa harus berjalan jauh. Kelas yang bersih juga membuat suasana belajar terasa lebih nyaman dan teratur.</p>
+</div><div class="pg">2</div></div>
+
+<!-- Halaman 3 -->
+<div class="sheet"><div class="in">
+<h3>D. KESIMPULAN</h3>
+<p class="ind">Kebiasaan membuang sampah pada tempatnya berpengaruh terhadap kebersihan kelas. Semakin sering siswa saling mengingatkan, semakin sedikit sampah yang tersisa di lantai. Oleh karena itu, setiap siswa perlu membiasakan diri membuang sampah pada tempatnya.</p>
+
+<h3>E. SARAN</h3>
+<div class="a"><ol>
+<li>Siswa membiasakan diri membuang sampah ke tempat sampah setelah makan atau jajan.</li>
+<li>Petugas piket memeriksa kebersihan kelas sebelum pulang sekolah.</li>
+<li>Wali kelas memberikan penghargaan kepada kelas yang paling bersih.</li>
+</ol><span class="tip">Poin berurutan: tab Home, klik Numbering (1, 2, 3)</span></div>
+
+<h3>DAFTAR PUSTAKA</h3>
+<div class="dp a">
+<p>Kementerian Pendidikan dan Kebudayaan. (2020). <i>Panduan Sekolah Bersih dan Sehat</i>. Jakarta: Kemendikbud.</p>
+<p>Sari, D. (2019). <i>Peduli Lingkungan Sejak Dini</i>. Bandung: Penerbit Cerdas.</p>
+<p>Utami, R. (2021). <i>Membiasakan Hidup Bersih di Sekolah</i>. Yogyakarta: Pustaka Cilik.</p>
+<span class="tip">Daftar pustaka: Paragraph, Special, Hanging 1,25 cm</span></div>
+</div><div class="pg">3<span class="tip">Nomor halaman: Insert, Page Number, Bottom of Page, Plain Number 2</span></div></div>
+</div>
+</div>
+
+<script>
+(function(){
+var pages=document.getElementById('pages');
+function fit(){
+  var w=pages.clientWidth, full=(pages.classList.contains('notes')?272:210)*96/25.4, s=Math.max(0.5,Math.min(1,w/full));
+  document.querySelectorAll('.sheet').forEach(function(e){e.style.zoom=s;});
+}
+window.addEventListener('resize',fit);fit();
+function inSheet(e){return e.target&&e.target.closest&&e.target.closest('.sheet');}
+['copy','cut','contextmenu','selectstart','dragstart'].forEach(function(t){
+  document.addEventListener(t,function(e){if(inSheet(e))e.preventDefault();});
+});
+document.addEventListener('keydown',function(e){
+  if((e.ctrlKey||e.metaKey)&&['c','a','x','p','s','u'].indexOf(e.key.toLowerCase())>-1){
+    var s=window.getSelection&&window.getSelection().toString();
+    if(e.key.toLowerCase()!=='c'||!s){e.preventDefault();}
+  }
+});
+var nb=document.getElementById('n');
+nb.addEventListener('click',function(){
+  var on=pages.classList.toggle('notes');
+  nb.setAttribute('aria-pressed',on?'true':'false');fit();
+});
+var b=document.getElementById('g');
+b.addEventListener('click',function(){
+  var on=pages.classList.toggle('guide');
+  b.setAttribute('aria-pressed',on?'true':'false');
+});
+})();
+</script>
+</body>
+</html>
