@@ -1,46 +1,60 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Latihan Layout Karya Tulis Ilmiah - Kelas 6</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Latihan Microsoft Word Kelas 6</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
---bg:#eef1f5;--card:#fff;--ink:#1c2430;--mute:#5b6675;--line:#d8dee7;--accent:#1f4fa3;--accentbg:#e8eefa}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--card:#1b222b;--ink:#e6ebf2;--mute:#9aa6b6;--line:#2c3643;--accent:#7aa5f0;--accentbg:#1f2a3d}}
-:root[data-theme="dark"]{--bg:#12161c;--card:#1b222b;--ink:#e6ebf2;--mute:#9aa6b6;--line:#2c3643;--accent:#7aa5f0;--accentbg:#1f2a3d}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+/* Layout: tiga tab latihan (mudah ke sulit), tiap tab berisi kartu langkah lalu kertas A4 yang harus ditiru.
+   Warna: --accent biru sekolah; kertas selalu putih seperti hasil cetak. Huruf halaman: sistem; huruf kertas: Times New Roman / Arial. */
+:root{--bg:#eef1f5;--card:#fff;--ink:#1c2430;--mute:#5b6675;--line:#d8dee7;--accent:#1f4fa3;--accentbg:#e8eefa}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--card:#1b222b;--ink:#e6ebf2;--mute:#9aa6b6;--line:#2c3643;--accent:#7aa5f0;--accentbg:#1f2a3d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161c;--card:#1b222b;--ink:#e6ebf2;--mute:#9aa6b6;--line:#2c3643;--accent:#7aa5f0;--accentbg:#1f2a3d;color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.5}
-.wrap{max-width:1000px;margin:0 auto;padding:20px 16px 48px}
-h1{font-size:1.5rem;margin:0 0 4px}
+.wrap{max-width:1000px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-size:1.5rem;margin:0 0 4px;text-wrap:balance}
 .sub{color:var(--mute);margin:0 0 20px}
+button{font:inherit;font-size:.9rem;padding:7px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--card);color:var(--accent);cursor:pointer}
+button[aria-pressed="true"]{background:var(--accent);color:var(--card)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-bottom:22px}
+.tab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0;text-align:left;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.tab .t{font-weight:700;font-size:1rem;color:var(--accent)}
+.tab .lv{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.tab .g{font-size:.86rem;color:var(--mute)}
+.tab[aria-selected="true"]{border-color:var(--accent);background:var(--accentbg);box-shadow:inset 0 0 0 1px var(--accent)}
+
+.phead h2{font-size:1.2rem;margin:0 0 2px;text-wrap:balance}
+.phead p{margin:0 0 14px;color:var(--mute)}
+.phead b{color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.card h2{display:flex;align-items:center;gap:8px;font-size:1rem;margin:0 0 8px;color:var(--accent)}
+.card{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h3{display:flex;align-items:center;gap:8px;font-size:1rem;margin:0 0 8px;color:var(--accent)}
 .card svg{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .card ul{margin:0;padding-left:18px;font-size:.92rem}
 .card li{margin:3px 0}
 .note{margin:16px 0;padding:12px 14px;background:var(--accentbg);border-left:4px solid var(--accent);border-radius:6px;font-size:.92rem}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:24px 0 12px}
 .bar h2{margin:0;font-size:1.1rem}
-button{font:inherit;font-size:.9rem;padding:7px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--card);color:var(--accent);cursor:pointer}
-button[aria-pressed="true"]{background:var(--accent);color:var(--card)}
-#pages{overflow-x:auto;padding-bottom:4px}
+.pages{overflow-x:auto;padding-bottom:4px}
 .notes .sheet{margin-right:62mm}
-.sheet{width:210mm;height:297mm;background:#fff;color:#000;box-shadow:0 2px 14px rgba(0,0,0,.25);padding:3cm 3cm 3cm 4cm;position:relative;margin:0 auto 20px;
+
+/* Kertas */
+.sheet{--mt:3cm;--mr:3cm;--mb:3cm;--ml:4cm;width:210mm;height:297mm;background:#fff;color:#000;box-shadow:0 2px 14px rgba(0,0,0,.25);padding:var(--mt) var(--mr) var(--mb) var(--ml);position:relative;margin:0 auto 20px;
 font-family:"Times New Roman","Liberation Serif",Times,serif;font-size:12pt;line-height:1.5;
 -webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.sheet.s1{--mt:2.54cm;--mr:2.54cm;--mb:2.54cm;--ml:2.54cm}
+.sheet.s2{--mt:2.54cm;--mr:1.91cm;--mb:2.54cm;--ml:1.91cm;font-family:Arial,"Liberation Sans",Helvetica,sans-serif}
+.sheet.s2::before{content:"";position:absolute;inset:9mm;border:3px double #173f87;pointer-events:none}
 .sheet .in{position:relative}
-.guide .sheet::after{content:"";position:absolute;left:4cm;right:3cm;top:3cm;bottom:3cm;border:1px dashed #d23;pointer-events:none}
+.guide .sheet::after{content:"";position:absolute;left:var(--ml);right:var(--mr);top:var(--mt);bottom:var(--mb);border:1px dashed #d23;pointer-events:none}
 .sheet p{margin:0 0 6pt;text-align:justify;position:relative}
 .sheet p.ind{text-indent:1.25cm}
-.sheet .judul{text-align:center;font-weight:bold;font-size:14pt;line-height:1.3;margin-bottom:8pt}
-.sheet .pen{text-align:center;margin-bottom:12pt}
-.sheet h3{font-size:12pt;font-weight:bold;margin:8pt 0 4pt;text-align:left}
+.sheet h3{font-size:12pt;font-weight:bold;margin:8pt 0 4pt;text-align:left;color:#000;display:block}
 .sheet h4{font-size:12pt;font-weight:bold;margin:4pt 0 2pt;text-align:left}
 .sheet ol,.sheet ul{margin:0 0 6pt;padding-left:1.25cm;text-align:justify}
 .sheet ul{list-style:disc}
+.sheet .judul{text-align:center;font-weight:bold;font-size:14pt;line-height:1.3;margin-bottom:8pt}
+.sheet .pen{text-align:center;margin-bottom:12pt}
 .sheet .cap{text-align:center;font-weight:bold;margin:6pt 0 4pt}
 .sheet table{border-collapse:collapse;width:100%;margin:0 auto 8pt;font-size:12pt;line-height:1.3}
 .sheet th,.sheet td{border:1px solid #000;padding:3pt 6pt}
@@ -49,20 +63,67 @@ font-family:"Times New Roman","Liberation Serif",Times,serif;font-size:12pt;line
 .sheet .pg{position:absolute;bottom:1.4cm;left:0;right:0;text-align:center}
 .sheet .dp p{padding-left:1.25cm;text-indent:-1.25cm;text-align:left;line-height:1.15}
 
+/* Latihan 1: pengumuman */
+.s1 .kop{text-align:center;border-bottom:2px solid #000;padding-bottom:6pt;margin-bottom:12pt;line-height:1.25}
+.s1 .kop .n{font-family:Arial,"Liberation Sans",Helvetica,sans-serif;font-size:16pt;font-weight:bold}
+.s1 .kop .al{font-size:11pt}
+.s1 .pgm{font-family:Arial,"Liberation Sans",Helvetica,sans-serif;font-size:20pt;font-weight:bold;text-decoration:underline;text-align:center;color:#173f87;line-height:1.2;margin-bottom:4pt}
+.s1 .nom{text-align:center;font-style:italic;margin-bottom:10pt}
+.s1 .row{margin:0;text-align:left}
+.s1 .row .l{display:inline-block;width:4cm}
+.s1 .gap{margin-bottom:6pt}
+.s1 .ttd{text-align:right;margin-top:14pt;line-height:1.5}
+
+/* Latihan 2: brosur */
+.s2 .ban{background:#173f87;color:#fff;text-align:center;padding:14pt 10pt;margin-bottom:12pt}
+.s2 .ban .t{font-size:24pt;font-weight:bold;line-height:1.15}
+.s2 .ban .st{font-size:14pt;font-style:italic;margin-top:2pt}
+.s2 .intro{text-align:center;font-style:italic;margin:0 0 12pt}
+.s2 .cols{display:grid;grid-template-columns:1fr 1fr;margin-bottom:14pt}
+.s2 .cols>div{min-width:0;padding:0 12pt}
+.s2 .cols>div:first-child{padding-left:0}
+.s2 .cols>div:nth-child(2){border-left:1px solid #000;padding-right:0}
+.s2 h5{font-size:14pt;font-weight:bold;margin:0 0 4pt;text-align:left}
+.s2 h5.g{color:#1b7a3a}
+.s2 h5.r{color:#b3261e}
+.s2 .cols ul{margin:0;padding-left:.9cm;text-align:left;line-height:1.35}
+.s2 .cols li{margin-bottom:3pt}
+.s2 .r3{display:flex;justify-content:space-around;margin-bottom:14pt}
+.s2 .r3 .c{width:30%;text-align:center;line-height:1.3}
+.s2 .r3 .dot{width:28mm;height:28mm;border-radius:50%;margin:0 auto 4pt;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14pt;font-weight:bold}
+.s2 .r3 .cp{font-size:11pt}
+.s2 .tbx{border:1.5pt solid #173f87;background:#e3ecfa;padding:8pt 12pt;margin:0 auto 16pt;width:84%;line-height:1.4}
+.s2 .tbx b{color:#173f87}
+.s2 .pen2{text-align:center;font-size:18pt;font-weight:bold;color:#173f87}
+
+/* Latihan 4: laporan kegiatan */
+.sheet.s4{--mt:2.54cm;--mr:2.54cm;--mb:2.54cm;--ml:2.54cm}
+.s4 .hd,.s4 .ft{position:absolute;left:var(--ml);right:var(--mr);font-size:10pt;line-height:1.3}
+.s4 .hd{top:1.25cm;text-align:right;font-style:italic;border-bottom:1px solid #000;padding-bottom:2pt}
+.s4 .ft{bottom:1.25cm;text-align:center;border-top:1px solid #000;padding-top:2pt}
+.s4 .dc::first-letter{float:left;font-size:60pt;line-height:.85;font-weight:bold;padding:2pt 6pt 0 0}
+.s4 figure.fig{float:right;width:5.2cm;margin:2pt 0 6pt 12pt;text-align:center}
+.s4 figure.fig svg{display:block;width:100%;height:auto;border:1px solid #000}
+.s4 figure.fig figcaption{font-size:10pt;font-style:italic;line-height:1.3;margin-top:3pt}
+.s4 table.nb{margin-top:12pt}
+.s4 table.nb td{border:none;text-align:center;width:50%;line-height:1.3;padding:2pt 6pt}
+
+/* Petunjuk kuning */
 .a{position:relative}
 .tip{display:none}
-.notes .a{outline:1.5px dashed #d4a000;outline-offset:2px;background:rgba(255,214,0,.16)}
-.notes .tip{display:block;position:absolute;top:50%;transform:translateY(-50%);left:calc(100% + 3cm + 12px);width:5.4cm;
-font:400 9pt/1.35 "Segoe UI",system-ui,Arial,sans-serif;text-align:left;text-indent:0;color:#4a3800;background:#fff3b8;border-left:3px solid #d4a000;border-radius:3px;padding:4px 7px;z-index:2}
-.notes .tip::before{content:"";position:absolute;right:100%;top:50%;width:calc(3cm + 12px);border-top:1.5px dashed #d4a000}
+.notes .a{outline:1.5px dashed #d4a000;outline-offset:2px;background-image:linear-gradient(rgba(255,214,0,.16),rgba(255,214,0,.16))}
+.notes .tip{display:block;position:absolute;top:50%;transform:translateY(-50%);left:calc(100% + var(--mr) + 12px);width:5.4cm;
+font:400 9pt/1.35 "Segoe UI",system-ui,Arial,sans-serif;text-align:left;text-indent:0;color:#4a3800;background:#fff3b8;border-left:3px solid #d4a000;border-radius:3px;padding:4px 7px;z-index:2;font-style:normal;font-weight:400;text-decoration:none;letter-spacing:0}
+.notes .tip::before{content:"";position:absolute;right:100%;top:50%;width:calc(var(--mr) + 12px);border-top:1.5px dashed #d4a000}
 .notes .pg .tip{left:calc(100% + 12px)}
 .notes .pg .tip::before{display:none}
+.notes .sheet>.tip.edge{left:calc(100% + 12px);top:12mm;transform:none}
+.notes .sheet>.tip.edge::before{display:none}
 .notes .sheet p.ind::before{content:"TAB";position:absolute;left:0;top:.3em;width:1.05cm;text-align:center;text-indent:0;font:700 7pt/1.3 "Segoe UI",Arial,sans-serif;background:#d4a000;color:#2e2200;border-radius:2px}
 .printmsg{display:none}
-@media print{.sheet,.bar,.grid,.note{display:none}.printmsg{display:block;font-size:1.2rem}}
+@media print{.sheet,.bar,.grid,.note,.tabs{display:none}.printmsg{display:block;font-size:1.2rem}}
 </style>
-</head>
-<body>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <symbol id="i-page" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/></symbol>
 <symbol id="i-type" viewBox="0 0 24 24"><path d="M5 6V4h14v2M12 4v16M9 20h6"/></symbol>
@@ -70,41 +131,220 @@ font:400 9pt/1.35 "Segoe UI",system-ui,Arial,sans-serif;text-align:left;text-ind
 <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 10h18M9 5v14M15 5v14"/></symbol>
 <symbol id="i-hash" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14M10 4L8 20M16 4l-2 16"/></symbol>
 <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+<symbol id="i-bold" viewBox="0 0 24 24"><path d="M7 4h6a3.5 3.5 0 010 7H7zM7 11h7a3.5 3.5 0 010 7H7z"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></symbol>
+<symbol id="i-shape" viewBox="0 0 24 24"><rect x="3" y="4" width="10" height="10" rx="1"/><circle cx="16" cy="16" r="5"/></symbol>
+<symbol id="i-columns" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M12 4v16M6 9h3M6 13h3M15 9h3M15 13h3"/></symbol>
+<symbol id="i-frame" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><rect x="7" y="7" width="10" height="10"/></symbol>
+<symbol id="i-textbox" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M8 10h8M8 14h5"/></symbol>
+<symbol id="i-header" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 8h18M3 16h18"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M3 18l6-5 4 3 3-2 5 4"/></symbol>
+<symbol id="i-dropcap" viewBox="0 0 24 24"><path d="M4 19L8 5l4 14M5.5 14h5M15 8h6M15 12h6M15 16h6"/></symbol>
 </svg>
 
 <div class="wrap">
-<h1>Latihan Layout Karya Tulis Ilmiah</h1>
-<p class="sub">Kelas 6 &middot; Tirulah tampilan tiga halaman di bawah ini di Microsoft Word.</p>
+<h1>Latihan Microsoft Word</h1>
+<p class="sub">Kelas 6 &middot; Empat latihan, dari yang mudah sampai yang menantang. Pilih satu latihan, lalu tirulah tampilan kertasnya di Microsoft Word.</p>
+
+<div class="tabs" role="tablist" aria-label="Pilih latihan">
+<button class="tab" type="button" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true"><span class="lv">Mudah &middot; 1 halaman</span><span class="t">Latihan 1</span><span class="g">Belajar format teks: huruf, rata teks, tab, dan poin-poin</span></button>
+<button class="tab" type="button" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><span class="lv">Sedang &middot; 1 halaman</span><span class="t">Latihan 2</span><span class="g">Belajar bentuk, dua kolom, kotak teks, dan bingkai halaman</span></button>
+<button class="tab" type="button" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><span class="lv">Lebih sulit &middot; 3 halaman</span><span class="t">Latihan 3</span><span class="g">Belajar margin, tabel, nomor halaman, dan daftar pustaka</span></button>
+<button class="tab" type="button" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1"><span class="lv">Tantangan &middot; 1 halaman</span><span class="t">Latihan 4</span><span class="g">Belajar header, footer, huruf pertama besar, gambar, dan tabel tanpa garis</span></button>
+</div>
+
+<!-- ============ LATIHAN 1 ============ -->
+<section class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+<div class="phead"><h2>Latihan 1: Pengumuman Sekolah</h2>
+<p><b>Kamu belajar:</b> jenis dan ukuran huruf, rata teks, tebal-miring-garis bawah, warna huruf, tab, garis, dan poin-poin.</p></div>
 
 <div class="grid">
-<div class="card"><h2><svg><use href="#i-page"/></svg>1. Atur Halaman</h2><ul>
+<div class="card"><h3><svg><use href="#i-page"/></svg>1. Atur Halaman</h3><ul>
+<li>Tab <b>Layout</b> &rarr; <b>Size</b> &rarr; pilih <b>A4</b>.</li>
+<li><b>Margins</b> &rarr; pilih <b>Normal</b> (semua sisi 2,54 cm).</li>
+<li>Hasil akhir hanya 1 halaman.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-type"/></svg>2. Jenis dan Ukuran Huruf</h3><ul>
+<li>Nama sekolah: <b>Arial</b>, ukuran <b>16</b>, Bold.</li>
+<li>Kata PENGUMUMAN: <b>Arial</b>, ukuran <b>20</b>, Bold.</li>
+<li>Alamat: <b>Times New Roman</b> ukuran <b>11</b>.</li>
+<li>Isi pengumuman: <b>Times New Roman</b> ukuran <b>12</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-align"/></svg>3. Rata Teks</h3><ul>
+<li><b>Ctrl + E</b>: rata tengah (kop dan judul).</li>
+<li><b>Ctrl + J</b>: rata kiri-kanan (paragraf isi).</li>
+<li><b>Ctrl + L</b>: rata kiri (baris acara).</li>
+<li><b>Ctrl + R</b>: rata kanan (tanda tangan).</li>
+<li>Line spacing: <b>1,5 lines</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-bold"/></svg>4. Tebal, Miring, Garis Bawah</h3><ul>
+<li>Blok kata, lalu <b>Ctrl + B</b> (tebal).</li>
+<li><b>Ctrl + I</b> (miring), <b>Ctrl + U</b> (garis bawah).</li>
+<li>Warna huruf: tab <b>Home</b> &rarr; <b>Font Color</b>.</li>
+<li>PENGUMUMAN berwarna biru tua dan bergaris bawah.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-list"/></svg>5. Tab, Garis, dan Poin</h3><ul>
+<li>Garis di bawah kop: <b>Home</b> &rarr; <b>Borders</b> &rarr; <b>Bottom Border</b>.</li>
+<li>Baris acara: klik kanan &rarr; <b>Paragraph</b> &rarr; <b>Tabs</b>, isi <b>4 cm</b>, klik <b>Set</b>.</li>
+<li>Tekan <b>Tab</b> satu kali setelah kata pertama.</li>
+<li>Poin-poin: <b>Home</b> &rarr; <b>Bullets</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-check"/></svg>6. Periksa Hasilmu</h3><ul>
+<li>Hanya 1 halaman.</li>
+<li>Titik dua pada baris acara sejajar lurus.</li>
+<li>Ada garis di bawah kop sekolah.</li>
+<li>Tanda tangan berada di sisi kanan.</li>
+<li>Kata tebal, miring, garis bawah, dan merah sudah sesuai.</li></ul></div>
+</div>
+
+<div class="note">Teks pada kertas di bawah tidak dapat disalin. Ketik ulang teksnya sambil memperhatikan tata letaknya. Kotak kuning di sebelah kanan kertas adalah petunjuk jenis huruf, ukuran, dan cara pengaturannya. Tanda TAB menunjukkan awal paragraf yang ditekan Tab.</div>
+
+<div class="pages notes">
+<div class="sheet s1"><div class="in">
+<div class="kop a"><div class="n">SD HARAPAN BANGSA</div><div class="al">Jalan Pendidikan No. 12, Kota Contoh</div><span class="tip">Nama: Arial 16 Bold. Alamat: Times New Roman 11. Rata tengah. Garis: Home, Borders, Bottom Border</span></div>
+<div class="pgm a">PENGUMUMAN<span class="tip">Arial 20, Bold, Underline, warna biru tua, rata tengah</span></div>
+<div class="nom a">Nomor: 012/SD/X/2026<span class="tip">Times New Roman 12, Italic, rata tengah</span></div>
+
+<p class="ind a">Diberitahukan kepada seluruh siswa kelas 6 bahwa sekolah akan mengadakan <b>Kerja Bakti Bersama</b> pada waktu dan tempat sebagai berikut.<span class="tip">Tekan Tab di awal paragraf. Rata kiri-kanan (Ctrl + J), spasi 1,5</span></p>
+
+<div class="a gap">
+<p class="row"><span class="l">Hari, tanggal</span>: Sabtu, 24 Oktober 2026</p>
+<p class="row"><span class="l">Waktu</span>: 07.00 sampai 09.00 WIB</p>
+<p class="row"><span class="l">Tempat</span>: Halaman dan ruang kelas</p>
+<p class="row"><span class="l">Pakaian</span>: Seragam olahraga</p>
+<span class="tip">Tab stop 4 cm: Paragraph, Tabs, 4 cm, Set. Tekan Tab setelah kata pertama. Rata kiri</span></div>
+
+<p class="ind a">Seluruh siswa <b><i>wajib hadir</i></b> dan <u>tidak boleh terlambat</u>. Siswa yang berhalangan hadir harus membawa <span style="color:#c00000">surat izin</span> dari orang tua.<span class="tip">Tebal Ctrl + B, miring Ctrl + I, garis bawah Ctrl + U. Merah: Home, Font Color</span></p>
+
+<p>Yang perlu dibawa oleh setiap siswa:</p>
+<div class="a"><ul>
+<li>Topi dan sarung tangan.</li>
+<li>Kantong plastik besar.</li>
+<li>Botol minum sendiri.</li>
+</ul><span class="tip">Poin biasa: Home, Bullets</span></div>
+
+<p class="ind">Demikian pengumuman ini disampaikan. Atas perhatian dan kerja samanya, kami ucapkan terima kasih.</p>
+
+<div class="ttd a">Kota Contoh, 19 Oktober 2026<br>Kepala Sekolah,<br><br><br><b><u>Nama Kepala Sekolah</u></b><span class="tip">Rata kanan (Ctrl + R). Nama: Bold dan Underline</span></div>
+</div></div>
+</div>
+</section>
+
+<!-- ============ LATIHAN 2 ============ -->
+<section class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+<div class="phead"><h2>Latihan 2: Brosur Kebersihan Kelas</h2>
+<p><b>Kamu belajar:</b> memasukkan bentuk (shapes), membuat dua kolom, kotak teks, dan bingkai halaman.</p></div>
+
+<div class="grid">
+<div class="card"><h3><svg><use href="#i-page"/></svg>1. Atur Halaman</h3><ul>
+<li>Tab <b>Layout</b> &rarr; <b>Size</b> &rarr; pilih <b>A4</b>.</li>
+<li><b>Margins</b> &rarr; pilih <b>Moderate</b>.</li>
+<li>Semua teks memakai huruf <b>Arial</b> ukuran <b>12</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-shape"/></svg>2. Spanduk Judul</h3><ul>
+<li><b>Insert</b> &rarr; <b>Shapes</b> &rarr; <b>Rectangle</b>, tarik selebar halaman.</li>
+<li>Tab <b>Shape Format</b> &rarr; <b>Shape Fill</b> biru tua, <b>Shape Outline</b> &rarr; No Outline.</li>
+<li>Klik kanan &rarr; <b>Add Text</b>. Judul: Arial <b>24</b>, Bold, putih.</li>
+<li>Kalimat kecil: ukuran <b>14</b>, <b>Italic</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-columns"/></svg>3. Dua Kolom</h3><ul>
+<li>Ketik dulu semua poin-poinnya.</li>
+<li>Blok tulisan, lalu <b>Layout</b> &rarr; <b>Columns</b> &rarr; <b>More Columns</b>.</li>
+<li>Pilih <b>Two</b>, centang <b>Line between</b>.</li>
+<li>Judul kolom: Arial <b>14</b>, Bold, hijau dan merah.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-shape"/></svg>4. Tiga Bentuk Bulat</h3><ul>
+<li><b>Insert</b> &rarr; <b>Shapes</b> &rarr; <b>Oval</b>. Tahan <b>Shift</b> agar bulatnya sempurna.</li>
+<li>Isi warna, lalu klik kanan &rarr; <b>Add Text</b>.</li>
+<li>Salin dengan <b>Ctrl + C</b>, tempel dengan <b>Ctrl + V</b>.</li>
+<li>Rapikan: <b>Shape Format</b> &rarr; <b>Align</b> &rarr; <b>Distribute Horizontally</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-frame"/></svg>5. Kotak Teks dan Bingkai</h3><ul>
+<li><b>Insert</b> &rarr; <b>Text Box</b> &rarr; <b>Simple Text Box</b>.</li>
+<li><b>Shape Fill</b> biru muda, <b>Shape Outline</b> biru tua.</li>
+<li>Bingkai halaman: <b>Design</b> &rarr; <b>Page Borders</b> &rarr; <b>Box</b>.</li>
+<li>Pilih garis ganda, <b>Color</b> biru tua, <b>Width 3 pt</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-check"/></svg>6. Periksa Hasilmu</h3><ul>
+<li>Hanya 1 halaman.</li>
+<li>Spanduk biru selebar halaman dengan tulisan putih.</li>
+<li>Dua kolom dipisah garis tegak.</li>
+<li>Tiga lingkaran sama besar dan sejajar.</li>
+<li>Ada bingkai di sekeliling halaman.</li></ul></div>
+</div>
+
+<div class="note">Kertas di bawah tidak dapat disalin. Ketik ulang teksnya sambil memperhatikan tata letaknya. Kotak kuning adalah petunjuk pengaturan, dan bentuk-bentuknya harus kamu buat sendiri dari menu Insert.</div>
+
+<div class="pages notes">
+<div class="sheet s2"><div class="in">
+<span class="tip edge">Bingkai halaman: Design, Page Borders, Box, garis ganda, 3 pt, biru tua</span>
+<div class="ban a"><div class="t">AYO JAGA KEBERSIHAN KELAS</div><div class="st">Kelas bersih, belajar nyaman</div><span class="tip">Insert, Shapes, Rectangle. Isi biru tua, teks putih. Judul Arial 24 Bold, kalimat kecil 14 Italic</span></div>
+
+<p class="intro">Kebersihan kelas adalah tanggung jawab kita bersama. Mulai dari hal kecil, kelas kita bisa menjadi tempat belajar yang menyenangkan.</p>
+
+<div class="cols a">
+<div><h5 class="g">Yang Harus Dilakukan</h5><ul>
+<li>Membuang sampah ke tempat sampah.</li>
+<li>Merapikan meja dan kursi sebelum pulang.</li>
+<li>Menyapu lantai sesuai jadwal piket.</li>
+<li>Menghapus papan tulis setelah pelajaran.</li>
+</ul></div>
+<div><h5 class="r">Yang Harus Dihindari</h5><ul>
+<li>Membuang sampah di kolong meja.</li>
+<li>Mencoret-coret meja dan dinding.</li>
+<li>Makan sambil berjalan di dalam kelas.</li>
+<li>Meninggalkan botol dan bungkus jajanan.</li>
+</ul></div>
+<span class="tip">Layout, Columns, More Columns, Two, centang Line between. Judul kolom Arial 14 Bold</span></div>
+
+<div class="r3 a">
+<div class="c"><div class="dot" style="background:#1f4fa3">Reduce</div><div class="cp">Kurangi sampah</div></div>
+<div class="c"><div class="dot" style="background:#1b7a3a">Reuse</div><div class="cp">Pakai ulang</div></div>
+<div class="c"><div class="dot" style="background:#c25a00">Recycle</div><div class="cp">Daur ulang</div></div>
+<span class="tip">Insert, Shapes, Oval. Tahan Shift. Add Text, Arial 14 Bold putih. Salin dengan Ctrl + C, Ctrl + V</span></div>
+
+<div class="tbx a"><b>Info Piket.</b> Petugas piket datang pukul 06.45 dan memeriksa tempat sampah sebelum jam pertama dimulai.<span class="tip">Insert, Text Box, Simple Text Box. Fill biru muda, Outline biru tua 1,5 pt</span></div>
+
+<div class="pen2 a">Kelas 6 Bersih, Kelas 6 Hebat!<span class="tip">Arial 18, Bold, biru tua, rata tengah</span></div>
+</div></div>
+</div>
+</section>
+
+<!-- ============ LATIHAN 3 ============ -->
+<section class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+<div class="phead"><h2>Latihan 3: Karya Tulis Ilmiah</h2>
+<p><b>Kamu belajar:</b> margin khusus, spasi paragraf, tabel, daftar pustaka, dan nomor halaman. Ini latihan terpanjang, tiga halaman.</p></div>
+
+<div class="grid">
+<div class="card"><h3><svg><use href="#i-page"/></svg>1. Atur Halaman</h3><ul>
 <li>Tab <b>Layout</b> &rarr; <b>Size</b> &rarr; pilih <b>A4</b>.</li>
 <li><b>Margins</b> &rarr; <b>Custom Margins</b>.</li>
 <li>Top 3 cm, Left 4 cm, Bottom 3 cm, Right 3 cm.</li></ul></div>
 
-<div class="card"><h2><svg><use href="#i-type"/></svg>2. Jenis dan Ukuran Huruf</h2><ul>
+<div class="card"><h3><svg><use href="#i-type"/></svg>2. Jenis dan Ukuran Huruf</h3><ul>
 <li>Semua teks: <b>Times New Roman</b>, ukuran <b>12</b>.</li>
 <li>Judul: ukuran <b>14</b>, <b>tebal (Bold)</b>, huruf kapital, rata tengah.</li>
 <li>Subjudul (Pendahuluan, Metode, dst.): tebal, rata kiri.</li></ul></div>
 
-<div class="card"><h2><svg><use href="#i-align"/></svg>3. Paragraf</h2><ul>
+<div class="card"><h3><svg><use href="#i-align"/></svg>3. Paragraf</h3><ul>
 <li>Klik kanan &rarr; <b>Paragraph</b>.</li>
 <li>Alignment: <b>Justified</b> (rata kiri-kanan).</li>
 <li>Line spacing: <b>1,5 lines</b>.</li>
-<li>Awal paragraf: tekan tombol <b>Tab</b> 1 kali.</li><li>Poin-poin: tab <b>Home</b> &rarr; <b>Bullets</b> atau <b>Numbering</b>.</li></ul></div>
+<li>Awal paragraf: tekan tombol <b>Tab</b> 1 kali.</li>
+<li>Poin-poin: tab <b>Home</b> &rarr; <b>Bullets</b> atau <b>Numbering</b>.</li></ul></div>
 
-<div class="card"><h2><svg><use href="#i-table"/></svg>4. Membuat Tabel</h2><ul>
+<div class="card"><h3><svg><use href="#i-table"/></svg>4. Membuat Tabel</h3><ul>
 <li><b>Insert</b> &rarr; <b>Table</b> &rarr; 3 kolom, 7 baris.</li>
 <li>Tab <b>Table Design</b> &rarr; <b>Borders</b> &rarr; <b>All Borders</b>.</li>
 <li>Baris judul tabel: tebal dan rata tengah.</li>
 <li>Tulis "Tabel 1." di atas tabel, rata tengah.</li></ul></div>
 
-<div class="card"><h2><svg><use href="#i-hash"/></svg>5. Nomor Halaman</h2><ul>
+<div class="card"><h3><svg><use href="#i-hash"/></svg>5. Nomor Halaman</h3><ul>
 <li><b>Insert</b> &rarr; <b>Page Number</b> &rarr; <b>Bottom of Page</b>.</li>
 <li>Pilih <b>Plain Number 2</b> (di tengah bawah).</li>
 <li>Pindah ke halaman berikutnya dengan <b>Ctrl + Enter</b>.</li></ul></div>
 
-<div class="card"><h2><svg><use href="#i-check"/></svg>6. Periksa Hasilmu</h2><ul>
+<div class="card"><h3><svg><use href="#i-check"/></svg>6. Periksa Hasilmu</h3><ul>
 <li>Hanya 3 halaman.</li>
 <li>Judul rata tengah, isi rata kiri-kanan.</li>
 <li>Tabel punya garis dan judul tabel.</li>
@@ -114,14 +354,9 @@ font:400 9pt/1.35 "Segoe UI",system-ui,Arial,sans-serif;text-align:left;text-ind
 
 <div class="note">Teks pada kertas di bawah tidak dapat disalin. Ketik ulang teksnya sambil memperhatikan tata letaknya. Kotak kuning di sebelah kanan kertas adalah petunjuk jenis huruf, ukuran, dan cara pengaturannya. Tanda TAB menunjukkan awal paragraf yang ditekan Tab.</div>
 
-<div class="bar"><h2>Contoh yang harus ditiru</h2>
-<div><button id="n" aria-pressed="true" type="button">Petunjuk</button> <button id="g" aria-pressed="false" type="button">Garis margin</button></div></div>
-
-<div class="printmsg">Halaman ini tidak dapat dicetak.</div>
-
-<div id="pages" class="notes">
+<div class="pages notes">
 <!-- Halaman 1 -->
-<div class="sheet"><div class="in">
+<div class="sheet s3"><div class="in">
 <div class="judul a">PENGARUH KEBIASAAN MEMBUANG SAMPAH<br>TERHADAP KEBERSIHAN KELAS<span class="tip">Times New Roman, ukuran 14, Bold, huruf kapital, rata tengah (Ctrl + E)</span></div>
 <div class="pen a">Disusun oleh: Nama Siswa<br>Kelas 6<span class="tip">Times New Roman, ukuran 12, rata tengah (Ctrl + E)</span></div>
 
@@ -144,7 +379,7 @@ font:400 9pt/1.35 "Segoe UI",system-ui,Arial,sans-serif;text-align:left;text-ind
 </div><div class="pg">1</div></div>
 
 <!-- Halaman 2 -->
-<div class="sheet"><div class="in">
+<div class="sheet s3"><div class="in">
 <h3>C. HASIL DAN PEMBAHASAN</h3>
 <p class="ind">Hasil pengamatan jumlah sampah di lantai kelas 6 selama lima hari ditunjukkan pada Tabel 1 berikut.</p>
 <div class="cap a">Tabel 1. Jumlah Sampah di Lantai Kelas 6<span class="tip">Judul tabel: Bold, rata tengah, diletakkan di atas tabel</span></div>
@@ -164,7 +399,7 @@ font:400 9pt/1.35 "Segoe UI",system-ui,Arial,sans-serif;text-align:left;text-ind
 </div><div class="pg">2</div></div>
 
 <!-- Halaman 3 -->
-<div class="sheet"><div class="in">
+<div class="sheet s3"><div class="in">
 <h3>D. KESIMPULAN</h3>
 <p class="ind">Kebiasaan membuang sampah pada tempatnya berpengaruh terhadap kebersihan kelas. Semakin sering siswa saling mengingatkan, semakin sedikit sampah yang tersisa di lantai. Oleh karena itu, setiap siswa perlu membiasakan diri membuang sampah pada tempatnya.</p>
 
@@ -183,16 +418,132 @@ font:400 9pt/1.35 "Segoe UI",system-ui,Arial,sans-serif;text-align:left;text-ind
 <span class="tip">Daftar pustaka: Paragraph, Special, Hanging 1,25 cm</span></div>
 </div><div class="pg">3<span class="tip">Nomor halaman: Insert, Page Number, Bottom of Page, Plain Number 2</span></div></div>
 </div>
+</section>
+
+<!-- ============ LATIHAN 4 ============ -->
+<section class="panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+<div class="phead"><h2>Latihan 4: Laporan Kegiatan Kerja Bakti</h2>
+<p><b>Kamu belajar:</b> header dan footer, huruf pertama besar (drop cap), menyisipkan gambar di samping teks, dan tabel tanpa garis untuk tanda tangan.</p></div>
+
+<div class="grid">
+<div class="card"><h3><svg><use href="#i-page"/></svg>1. Atur Halaman</h3><ul>
+<li>Tab <b>Layout</b> &rarr; <b>Size</b> &rarr; pilih <b>A4</b>.</li>
+<li><b>Margins</b> &rarr; pilih <b>Normal</b> (semua sisi 2,54 cm).</li>
+<li>Isi laporan: <b>Times New Roman</b> ukuran <b>12</b>, rata kiri-kanan, spasi <b>1,5</b>.</li>
+<li>Hasil akhir hanya 1 halaman.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-header"/></svg>2. Header dan Footer</h3><ul>
+<li><b>Insert</b> &rarr; <b>Header</b> &rarr; <b>Edit Header</b>. Ketik teks, ukuran <b>10</b>, <b>Italic</b>, rata kanan (Ctrl + R).</li>
+<li>Garis header: <b>Home</b> &rarr; <b>Borders</b> &rarr; <b>Bottom Border</b>.</li>
+<li><b>Insert</b> &rarr; <b>Footer</b> &rarr; <b>Edit Footer</b>. Ukuran <b>10</b>, rata tengah, garis <b>Top Border</b>.</li>
+<li>Selesai: klik <b>Close Header and Footer</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-dropcap"/></svg>3. Huruf Pertama Besar</h3><ul>
+<li>Klik di dalam paragraf Pendahuluan.</li>
+<li>Tab <b>Insert</b> &rarr; <b>Drop Cap</b> &rarr; <b>Dropped</b>.</li>
+<li>Huruf pertama menjadi besar dan teks mengalir di sampingnya (3 baris).</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-image"/></svg>4. Menyisipkan Gambar</h3><ul>
+<li><b>Insert</b> &rarr; <b>Pictures</b>, pilih gambar pohon atau kerja bakti.</li>
+<li>Klik gambar &rarr; <b>Picture Format</b> &rarr; <b>Wrap Text</b> &rarr; <b>Square</b>.</li>
+<li>Atur lebar <b>5 cm</b> (kotak <b>Width</b>), lalu geser ke sisi kanan.</li>
+<li>Keterangan di bawah gambar: ukuran <b>10</b>, <b>Italic</b>, rata tengah.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-table"/></svg>5. Tabel Tanpa Garis</h3><ul>
+<li><b>Insert</b> &rarr; <b>Table</b> &rarr; 2 kolom, 3 baris.</li>
+<li>Tab <b>Table Design</b> &rarr; <b>Borders</b> &rarr; <b>No Border</b>.</li>
+<li>Semua isi tabel rata tengah (Ctrl + E).</li>
+<li>Baris tengah dikosongkan untuk tanda tangan. Nama: <b>Bold</b> dan <b>Underline</b>.</li></ul></div>
+
+<div class="card"><h3><svg><use href="#i-check"/></svg>6. Periksa Hasilmu</h3><ul>
+<li>Hanya 1 halaman.</li>
+<li>Header di atas dan footer di bawah, masing-masing bergaris.</li>
+<li>Huruf pertama paragraf pertama besar.</li>
+<li>Gambar berada di kanan dan teks mengalir di sampingnya.</li>
+<li>Tabel tanda tangan tidak memiliki garis.</li></ul></div>
+</div>
+
+<div class="note">Kertas di bawah tidak dapat disalin. Ketik ulang teksnya sambil memperhatikan tata letaknya. Header dan footer berada di tepi atas dan bawah kertas, di luar area margin. Gambar boleh kamu ganti dengan gambar lain yang sesuai.</div>
+
+<div class="pages notes">
+<div class="sheet s4">
+<div class="hd a">Laporan Kegiatan Kerja Bakti Kelas 6<span class="tip">Insert, Header. Times New Roman 10, Italic, rata kanan, Bottom Border</span></div>
+<div class="in">
+<div class="judul a">LAPORAN KEGIATAN KERJA BAKTI<span class="tip">Times New Roman 14, Bold, huruf kapital, rata tengah</span></div>
+<div class="pen">Kelas 6 &middot; Sabtu, 24 Oktober 2026</div>
+
+<h3>A. PENDAHULUAN</h3>
+<figure class="fig a">
+<svg viewBox="0 0 200 150" aria-hidden="true"><rect width="200" height="150" fill="#cfe8ff"/><circle cx="162" cy="30" r="14" fill="#f6b800"/><rect y="110" width="200" height="40" fill="#5fae4e"/><rect x="92" y="68" width="14" height="52" fill="#7a4a21"/><circle cx="99" cy="58" r="30" fill="#2f8a3b"/><circle cx="78" cy="76" r="20" fill="#2f8a3b"/><circle cx="120" cy="76" r="20" fill="#2f8a3b"/></svg>
+<figcaption>Gambar 1. Menanam pohon</figcaption>
+<span class="tip">Insert, Pictures. Wrap Text: Square. Lebar 5 cm, di kanan. Keterangan: ukuran 10, Italic</span></figure>
+<p class="dc a">Kerja bakti merupakan kegiatan membersihkan lingkungan secara bersama-sama. Kegiatan ini bertujuan menumbuhkan rasa peduli dan tanggung jawab siswa terhadap kebersihan sekolah. Selain itu, kerja bakti melatih siswa untuk bekerja sama dengan teman. Pada hari Sabtu, 24 Oktober 2026, seluruh siswa kelas 6 mengikuti kerja bakti di halaman dan ruang kelas. Kegiatan dimulai pukul 07.00 dan berakhir pukul 09.00 WIB dengan bimbingan wali kelas.<span class="tip">Drop Cap: Insert, Drop Cap, Dropped. Rata kiri-kanan, spasi 1,5</span></p>
+
+<h3>B. PELAKSANAAN</h3>
+<div class="a"><ol>
+<li>Siswa berkumpul di halaman dan berdoa bersama.</li>
+<li>Wali kelas membagi siswa menjadi empat kelompok.</li>
+<li>Setiap kelompok membersihkan tempat yang berbeda.</li>
+<li>Semua siswa menanam satu pohon kecil di taman.</li>
+</ol><span class="tip">Poin berurutan: Home, Numbering</span></div>
+
+<h3>C. HASIL KEGIATAN</h3>
+<p class="ind">Halaman sekolah menjadi lebih bersih dan rapi. Sebanyak dua puluh lima pohon kecil berhasil ditanam di taman sekolah. Siswa terlihat bersemangat dan saling membantu selama kegiatan berlangsung. Setelah kegiatan, ruang kelas juga lebih nyaman digunakan untuk belajar.</p>
+
+<h3>D. PENUTUP</h3>
+<p class="ind">Kerja bakti perlu dilakukan secara rutin agar sekolah selalu bersih. Diharapkan setiap siswa tetap menjaga kebersihan pada hari-hari biasa.</p>
+
+<div class="a"><table class="nb">
+<tr><td>Mengetahui,<br>Wali Kelas 6</td><td>Kota Contoh, 24 Oktober 2026<br>Ketua Kelas</td></tr>
+<tr><td style="height:36px"></td><td></td></tr>
+<tr><td><b><u>Nama Wali Kelas</u></b></td><td><b><u>Nama Ketua Kelas</u></b></td></tr>
+</table><span class="tip">Insert, Table: 2 kolom, 3 baris. Table Design, Borders, No Border. Isi rata tengah</span></div>
+</div>
+<div class="ft a">SD Harapan Bangsa &nbsp;|&nbsp; Tahun Ajaran 2026/2027<span class="tip">Insert, Footer. Ukuran 10, rata tengah, Top Border</span></div>
+</div>
+</div>
+</section>
+
+<div class="bar"><h2>Tampilan kertas</h2>
+<div><button id="n" aria-pressed="true" type="button">Petunjuk</button> <button id="g" aria-pressed="false" type="button">Garis margin</button></div></div>
+<div class="printmsg">Halaman ini tidak dapat dicetak.</div>
 </div>
 
 <script>
 (function(){
-var pages=document.getElementById('pages');
+var panels=[].slice.call(document.querySelectorAll('.panel'));
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+var pagesEls=[].slice.call(document.querySelectorAll('.pages'));
 function fit(){
-  var w=pages.clientWidth, full=(pages.classList.contains('notes')?272:210)*96/25.4, s=Math.max(0.5,Math.min(1,w/full));
-  document.querySelectorAll('.sheet').forEach(function(e){e.style.zoom=s;});
+  pagesEls.forEach(function(pg){
+    if(pg.closest('.panel').hidden)return;
+    var w=pg.clientWidth,full=(pg.classList.contains('notes')?272:210)*96/25.4,s=Math.max(0.5,Math.min(1,w/full));
+    pg.querySelectorAll('.sheet').forEach(function(e){e.style.zoom=s;});
+  });
 }
-window.addEventListener('resize',fit);fit();
+function show(i,focus){
+  panels.forEach(function(p,k){p.hidden=(k!==i);});
+  tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false');t.tabIndex=(k===i)?0:-1;});
+  if(focus)tabs[i].focus();
+  fit();
+  try{history.replaceState(null,'','#latihan-'+(i+1));}catch(e){}
+}
+tabs.forEach(function(t,i){
+  t.addEventListener('click',function(){show(i,false);});
+  t.addEventListener('keydown',function(e){
+    var n=-1;
+    if(e.key==='ArrowRight')n=(i+1)%tabs.length;
+    else if(e.key==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;
+    else if(e.key==='Home')n=0;
+    else if(e.key==='End')n=tabs.length-1;
+    if(n>-1){e.preventDefault();show(n,true);}
+  });
+});
+var start=0,m=/^#latihan-([1-4])$/.exec(location.hash||'');
+if(m)start=parseInt(m[1],10)-1;
+show(start,false);
+window.addEventListener('resize',fit);
+
 function inSheet(e){return e.target&&e.target.closest&&e.target.closest('.sheet');}
 ['copy','cut','contextmenu','selectstart','dragstart'].forEach(function(t){
   document.addEventListener(t,function(e){if(inSheet(e))e.preventDefault();});
@@ -205,15 +556,17 @@ document.addEventListener('keydown',function(e){
 });
 var nb=document.getElementById('n');
 nb.addEventListener('click',function(){
-  var on=pages.classList.toggle('notes');
+  var on=nb.getAttribute('aria-pressed')!=='true';
+  pagesEls.forEach(function(p){p.classList.toggle('notes',on);});
   nb.setAttribute('aria-pressed',on?'true':'false');fit();
 });
-var b=document.getElementById('g');
-b.addEventListener('click',function(){
-  var on=pages.classList.toggle('guide');
-  b.setAttribute('aria-pressed',on?'true':'false');
+var gb=document.getElementById('g');
+gb.addEventListener('click',function(){
+  var on=gb.getAttribute('aria-pressed')!=='true';
+  pagesEls.forEach(function(p){p.classList.toggle('guide',on);});
+  gb.setAttribute('aria-pressed',on?'true':'false');
 });
 })();
 </script>
-</body>
-</html>
+
+</body></html>
